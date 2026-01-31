@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Estudio Jurídico Defilippi - Abogada Florencia Defilippi y Escribana en Posadas, Misiones. Especialistas en Sucesiones, Familia, Inmobiliario y más. Asesoramiento presencial y online.">
+    <title>Estudio Jurídico Defilippi | Abogada & Escribana | Posadas, Misiones</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #E0B67A;
+            --color-secondary: #A0825A;
+            --color-dark: #3D2F21;
+            --color-light: #F5E6D3;
+            --color-cream: #FAF6F0;
+            --font-serif: 'Cinzel', serif;
+            --font-sans: 'Lato', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            transition: background-color 0.3s ease;
+            background-color: transparent;
+        }
+
+        header.scrolled {
+            background-color: var(--color-secondary);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 2px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            position: absolute;
+            left: 20rem;
+        }
+
+        header.scrolled .logo-text {
+            opacity: 1;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--color-primary);
+        }
+
+        .nav-cta {
+            background-color: var(--color-primary);
+            color: var(--color-dark) !important;
+            padding: 0.7rem 1.5rem;
+            border-radius: 0;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background-color: white;
+            transform: translateY(-2px);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1002;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 3px 0;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 180px 2rem 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1600&q=80') center/cover no-repeat fixed;
+            filter: grayscale(100%);
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-secondary);
+            mix-blend-mode: multiply;
+            opacity: 0.75;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(74, 60, 46, 0.5);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 900px;
+        }
+
+        .hero-logo {
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-textlogo {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-textlogo-accent {
+            color: var(--color-primary);
+            display: block;
+            font-size: 1.2em;
+            letter-spacing: 8px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--color-light);
+            letter-spacing: 3px;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            color: var(--color-light);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 0;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: var(--color-dark);
+        }
+
+        .btn-primary:hover {
+            background-color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--color-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Especialidades Section */
+        .especialidades {
+            padding: 120px 0;
+            background-color: var(--color-cream);
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--color-dark);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--color-secondary);
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .especialidades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .especialidad-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--color-primary);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .especialidad-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .especialidad-card i {
+            font-size: 3rem;
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .especialidad-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--color-dark);
+        }
+
+        .especialidad-card p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .especialidad-card ul {
+            list-style: none;
+            text-align: left;
+            margin-top: 1rem;
+        }
+
+        .especialidad-card ul li {
+            padding: 0.5rem 0;
+            color: #666;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .especialidad-card ul li:before {
+            content: "✓";
+            color: var(--color-primary);
+            font-weight: bold;
+        }
+
+        /* Sobre Mí Section */
+        .sobre-mi {
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+
+        .sobre-mi::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=1600&q=80') center/cover no-repeat fixed;
+            filter: grayscale(100%);
+            z-index: 0;
+        }
+
+        .sobre-mi::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-secondary);
+            mix-blend-mode: multiply;
+            opacity: 0.75;
+            z-index: 1;
+        }
+
+        .sobre-mi-overlay {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(74, 60, 46, 0.5);
+            z-index: 2;
+        }
+
+        .sobre-mi .container {
+            position: relative;
+            z-index: 3;
+        }
+
+        .sobre-mi-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .sobre-mi-foto {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 2rem;
+            border: 5px solid var(--color-primary);
+            box-shadow: 0 8px 30px rgba(212, 165, 116, 0.4);
+        }
+
+        .sobre-mi-foto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .sobre-mi .section-title {
+            color: white;
+        }
+
+        .sobre-mi .section-subtitle {
+            color: var(--color-light);
+        }
+
+        .sobre-mi p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            color: var(--color-light);
+        }
+
+        /* Beneficios Section */
+        .beneficios {
+            padding: 120px 0;
+            background-color: var(--color-light);
+        }
+
+        .beneficios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .beneficio-item {
+            text-align: center;
+        }
+
+        .beneficio-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .beneficio-item:hover .beneficio-icon {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(212, 165, 116, 0.3);
+        }
+
+        .beneficio-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .beneficio-item h3 {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--color-dark);
+        }
+
+        .beneficio-item p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Testimonios Section */
+        .testimonios {
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+
+        .testimonios::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1479142506502-19b3a3b7ff33?w=1600&q=80') center/cover no-repeat fixed;
+            filter: grayscale(100%);
+            z-index: 0;
+        }
+
+        .testimonios::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-dark);
+            mix-blend-mode: multiply;
+            opacity: 0.70;
+            z-index: 1;
+        }
+
+        .testimonios-overlay {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(74, 60, 46, 0.5);
+            z-index: 2;
+        }
+
+        .testimonios .container {
+            position: relative;
+            z-index: 3;
+        }
+
+        .testimonios .section-title {
+            color: white;
+        }
+
+        .testimonios .section-subtitle {
+            color: var(--color-light);
+        }
+
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .testimonio-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2.5rem;
+            border-radius: 8px;
+            position: relative;
+            color: var(--color-dark);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+
+        .testimonio-quote {
+            font-size: 4rem;
+            color: var(--color-primary);
+            line-height: 1;
+            margin-bottom: 1rem;
+            font-family: Georgia, serif;
+        }
+
+        .testimonio-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #555;
+            font-style: italic;
+        }
+
+        .testimonio-author {
+            font-weight: 700;
+            color: var(--color-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .testimonio-case {
+            color: var(--color-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 120px 0;
+            background-color: var(--color-cream);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--color-primary);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: var(--color-light);
+        }
+
+        .faq-question h3 {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            color: var(--color-dark);
+            font-weight: 600;
+        }
+
+        .faq-question i {
+            color: var(--color-primary);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer-content {
+            padding: 0 2rem 1.5rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        /* Instagram Section */
+        .instagram {
+            padding: 120px 0;
+            background-color: white;
+        }
+
+        .instagram-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .instagram-embed {
+            background: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .instagram-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 120px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&q=80') center/cover no-repeat fixed;
+            filter: grayscale(100%);
+            z-index: 0;
+        }
+
+        .cta::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-primary);
+            mix-blend-mode: multiply;
+            opacity: 0.75;
+            z-index: 1;
+        }
+
+        .cta-overlay {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(74, 60, 46, 0.5);
+            z-index: 2;
+        }
+
+        .cta .container {
+            position: relative;
+            z-index: 3;
+        }
+
+        .cta h2 {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Contacto Section */
+        .contacto {
+            padding: 120px 0;
+            background-color: var(--color-light);
+        }
+
+        .contacto-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contacto-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contacto-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .contacto-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contacto-icon i {
+            font-size: 1.3rem;
+            color: white;
+        }
+
+        .contacto-text h3 {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-dark);
+        }
+
+        .contacto-text p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .contacto-text a {
+            color: var(--color-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contacto-text a:hover {
+            color: var(--color-primary);
+        }
+
+        .contacto-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: var(--color-dark);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 0;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .form-group button {
+            width: 100%;
+        }
+
+        /* Mapa Section */
+        .mapa {
+            padding: 0;
+            display: block;
+        }
+
+        .mapa iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-dark);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-about h3 {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--color-primary);
+            letter-spacing: 2px;
+        }
+
+        .footer-about p {
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #ccc;
+        }
+
+        .footer-logo-img {
+            width: 100px;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background-color: var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: white;
+            color: var(--color-dark);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h4,
+        .footer-especialidades h4 {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-primary);
+        }
+
+        .footer-links ul,
+        .footer-especialidades ul {
+            list-style: none;
+        }
+
+        .footer-links li,
+        .footer-especialidades li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a,
+        .footer-especialidades li {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-primary);
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: #999;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-bottom a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 999;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+
+        .whatsapp-btn i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 25px rgba(37, 211, 102, 0.8);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .menu-toggle {
+                display: flex;
+                margin-left: auto;
+            }
+
+            .nav-container {
+                justify-content: center;
+                position: relative;
+            }
+
+            .logo-text {
+                opacity: 1;
+                font-size: 1.3rem;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background-color: var(--color-secondary);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                transition: right 0.3s ease;
+            }
+
+            nav ul.active {
+                right: 0;
+            }
+
+            .hero {
+                padding: 130px 2rem 80px;
+            }
+
+            .hero-textlogo {
+                font-size: 2rem;
+                letter-spacing: 3px;
+            }
+
+            .hero-textlogo-accent {
+                letter-spacing: 4px;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .especialidades,
+            .sobre-mi,
+            .beneficios,
+            .testimonios,
+            .faq,
+            .instagram,
+            .cta,
+            .contacto {
+                padding: 90px 0;
+            }
+
+            .contacto-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .contacto-info {
+                align-items: center;
+            }
+
+            .contacto-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-about,
+            .footer-links,
+            .footer-especialidades {
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .footer-links ul,
+            .footer-especialidades ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .form-group label {
+                text-align: center;
+            }
+
+            .testimonios-grid,
+            .instagram-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mapa iframe {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .especialidades-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .especialidad-card ul {
+                text-align: center;
+            }
+
+            .especialidad-card ul li {
+                justify-content: center;
+            }
+
+            .beneficios-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header id="header">
+        <div class="container">
+            <div class="nav-container">
+                <a href="#hero" class="logo-text">DEFILIPPI</a>
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <nav>
+                    <ul id="navMenu">
+                        <li><a href="#especialidades">Especialidades</a></li>
+                        <li><a href="#sobre-mi">Sobre Mí</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                        <li><a href="#faq">Preguntas</a></li>
+                        <li><a href="#contacto" class="nav-cta">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-logo">
+                <div class="hero-textlogo">
+                    <span class="hero-textlogo-accent">Estudio</span>
+                    Defilippi
+                </div>
+                <p class="hero-subtitle">Abogada & Escribana</p>
+            </div>
+            <h1>Su Confianza, Nuestra Responsabilidad</h1>
+            <p>Asesoramiento legal y notarial en Posadas, Misiones. Soluciones efectivas con calidez humana, atención presencial y online.</p>
+            <div class="hero-buttons">
+                <a href="#contacto" class="btn btn-primary">Consulte Ahora</a>
+                <a href="#especialidades" class="btn btn-secondary">Nuestras Áreas</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Especialidades Section -->
+    <section class="especialidades" id="especialidades">
+        <div class="container">
+            <h2 class="section-title">Áreas de Práctica</h2>
+            <p class="section-subtitle">Brindamos asesoramiento integral en las principales áreas del derecho, con atención personalizada y soluciones efectivas.</p>
+            
+            <div class="especialidades-grid">
+                <div class="especialidad-card">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>Sucesiones</h3>
+                    <p>Tramitación completa de sucesiones, declaratoria de herederos y partición de bienes.</p>
+                    <ul>
+                        <li>Petición de Herencia</li>
+                        <li>Declaratoria de Herederos</li>
+                        <li>Partición de Bienes</li>
+                        <li>Testamentos</li>
+                    </ul>
+                </div>
+
+                <div class="especialidad-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Derecho de Familia</h3>
+                    <p>Asesoramiento en todas las cuestiones familiares con enfoque humanitario.</p>
+                    <ul>
+                        <li>Divorcios y Separaciones</li>
+                        <li>Unión Convivencial</li>
+                        <li>Cuota Alimentaria</li>
+                        <li>Régimen de Visitas</li>
+                        <li>Autorización de Viaje</li>
+                    </ul>
+                </div>
+
+                <div class="especialidad-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Derecho Inmobiliario</h3>
+                    <p>Seguridad jurídica en todas sus operaciones inmobiliarias.</p>
+                    <ul>
+                        <li>Boletos de Compraventa</li>
+                        <li>Escrituras Públicas</li>
+                        <li>Protección de Vivienda</li>
+                        <li>Contratos de Alquiler</li>
+                    </ul>
+                </div>
+
+                <div class="especialidad-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Mediación</h3>
+                    <p>Resolución de conflictos de manera pacífica y consensuada.</p>
+                    <ul>
+                        <li>Mediación Familiar</li>
+                        <li>Mediación Comercial</li>
+                        <li>Resolución de Conflictos</li>
+                        <li>Acuerdos Extrajudiciales</li>
+                    </ul>
+                </div>
+
+                <div class="especialidad-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Acciones Legales</h3>
+                    <p>Defensa de sus derechos ante cualquier situación.</p>
+                    <ul>
+                        <li>Acciones de Amparo</li>
+                        <li>Daños y Perjuicios</li>
+                        <li>ART y Accidentes</li>
+                        <li>Reclamos Administrativos</li>
+                    </ul>
+                </div>
+
+                <div class="especialidad-card">
+                    <i class="fas fa-pen-nib"></i>
+                    <h3>Escribanía</h3>
+                    <p>Servicio notarial completo para todos sus trámites.</p>
+                    <ul>
+                        <li>Escrituras Públicas</li>
+                        <li>Certificaciones</li>
+                        <li>Poderes</li>
+                        <li>Actas Notariales</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mí Section -->
+    <section class="sobre-mi" id="sobre-mi">
+        <div class="sobre-mi-overlay"></div>
+        <div class="container">
+            <div class="sobre-mi-content">
+                <div class="sobre-mi-foto">
+                    <img src="./flordefilippi.jpg" alt="Dra. Florencia Defilippi">
+                </div>
+                <h2 class="section-title">Sobre Mí</h2>
+                <p class="section-subtitle">Dra. Florencia Defilippi</p>
+                <p>Soy abogada y escribana con amplia experiencia en el ejercicio profesional en Posadas, Misiones. Mi compromiso es brindar un servicio jurídico de excelencia, con calidez humana y atención personalizada.</p>
+                <p>Entiendo que cada caso es único y merece un tratamiento especial. Por eso, trabajo de manera cercana con mis clientes, ofreciendo asesoramiento claro y estrategias efectivas para resolver sus problemas legales.</p>
+                <p>Mi formación continua y dedicación me permiten estar siempre actualizada en las últimas novedades del derecho, garantizando así el mejor servicio profesional. Atiendo tanto de forma presencial en mi estudio como de manera online, adaptándome a las necesidades de cada cliente.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beneficios Section -->
+    <section class="beneficios" id="beneficios">
+        <div class="container">
+            <h2 class="section-title">Por Qué Elegirnos</h2>
+            <p class="section-subtitle">Trabajamos con profesionalismo, dedicación y un enfoque centrado en nuestros clientes.</p>
+            
+            <div class="beneficios-grid">
+                <div class="beneficio-item">
+                    <div class="beneficio-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3>Atención Personalizada</h3>
+                    <p>Cada caso recibe atención individual y un seguimiento dedicado de principio a fin.</p>
+                </div>
+
+                <div class="beneficio-item">
+                    <div class="beneficio-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Respuesta Rápida</h3>
+                    <p>Entendemos la urgencia de sus asuntos legales y respondemos con agilidad.</p>
+                </div>
+
+                <div class="beneficio-item">
+                    <div class="beneficio-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Experiencia Comprobada</h3>
+                    <p>Años de trayectoria resolviendo casos con éxito en diversas áreas del derecho.</p>
+                </div>
+
+                <div class="beneficio-item">
+                    <div class="beneficio-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Enfoque Humano</h3>
+                    <p>Más allá de lo legal, entendemos el impacto emocional y trabajamos con empatía.</p>
+                </div>
+
+                <div class="beneficio-item">
+                    <div class="beneficio-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Modalidad Online</h3>
+                    <p>Asesoramiento virtual para mayor comodidad, sin necesidad de desplazarse.</p>
+                </div>
+
+                <div class="beneficio-item">
+                    <div class="beneficio-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Comunicación Clara</h3>
+                    <p>Explicamos cada paso del proceso de manera sencilla y comprensible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios Section -->
+    <section class="testimonios" id="testimonios">
+        <div class="testimonios-overlay"></div>
+        <div class="container">
+            <h2 class="section-title">Testimonios</h2>
+            <p class="section-subtitle">Lo que dicen quienes confiaron en nosotros</p>
+            
+            <div class="testimonios-grid">
+                <div class="testimonio-card">
+                    <div class="testimonio-quote">"</div>
+                    <p class="testimonio-text">Excelente profesional. Me asesoró en mi divorcio con mucha paciencia y claridad. Todo el proceso fue más llevadero gracias a su apoyo.</p>
+                    <p class="testimonio-author">María González</p>
+                    <p class="testimonio-case">Derecho de Familia</p>
+                </div>
+
+                <div class="testimonio-card">
+                    <div class="testimonio-quote">"</div>
+                    <p class="testimonio-text">La Dra. Defilippi resolvió la sucesión de mi padre de manera rápida y eficiente. Muy conforme con el servicio recibido.</p>
+                    <p class="testimonio-author">Carlos Martínez</p>
+                    <p class="testimonio-case">Sucesiones</p>
+                </div>
+
+                <div class="testimonio-card">
+                    <div class="testimonio-quote">"</div>
+                    <p class="testimonio-text">Profesional, responsable y muy humana. Me ayudó con la compra de mi primera casa y todo salió perfecto. La recomiendo totalmente.</p>
+                    <p class="testimonio-author">Laura Fernández</p>
+                    <p class="testimonio-case">Derecho Inmobiliario</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <p class="section-subtitle">Resolvemos las dudas más comunes sobre nuestros servicios</p>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Cuánto tiempo lleva un proceso de sucesión?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>El tiempo de un proceso de sucesión varía según la complejidad del caso, la cantidad de herederos y si existen bienes a dividir. En promedio, una sucesión puede llevar entre 6 meses y 2 años. Trabajamos para agilizar cada etapa y mantenerlo informado en todo momento.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Qué documentación necesito para iniciar un divorcio?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Para iniciar un divorcio necesitará: acta de matrimonio, DNI de ambos cónyuges, documentación de los hijos (si los hay), y acreditación de bienes en común. En nuestra primera consulta le indicaremos exactamente qué documentos específicos necesita según su situación particular.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Atienden consultas de forma virtual?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Sí, ofrecemos asesoramiento legal online a través de videollamada o WhatsApp. Esta modalidad es ideal para consultas iniciales, seguimiento de casos y para quienes no pueden asistir presencialmente al estudio. La calidad del servicio es la misma que la atención presencial.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Cuál es la diferencia entre boleto y escritura?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>El boleto de compraventa es un contrato privado donde las partes acuerdan la operación. La escritura pública es el documento notarial que transfiere definitivamente la propiedad y debe inscribirse en el Registro de la Propiedad. El boleto genera derechos pero la escritura perfecciona la transferencia del dominio.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Qué es la mediación y cuándo es conveniente?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>La mediación es un método alternativo de resolución de conflictos donde un tercero neutral ayuda a las partes a llegar a un acuerdo. Es conveniente cuando existe voluntad de diálogo y se busca evitar un juicio prolongado y costoso. Es especialmente útil en conflictos familiares, comerciales o vecinales.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Cómo se fija la cuota alimentaria?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>La cuota alimentaria se fija considerando las necesidades del hijo y las posibilidades económicas del alimentante. Se tienen en cuenta gastos de educación, salud, vestimenta, recreación y vivienda. Puede establecerse por acuerdo entre las partes o, en su defecto, por decisión judicial mediante un proceso legal.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Section -->
+    <section class="instagram" id="instagram">
+        <div class="container">
+            <h2 class="section-title">Síguenos en Instagram</h2>
+            <p class="section-subtitle">Mantente informado con contenido legal útil y actualizado</p>
+            
+            <div class="instagram-grid">
+                <div class="instagram-embed">
+                    <iframe src="https://www.instagram.com/reel/C9AmpMEvNcm/embed" width="100%" height="700" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                </div>
+
+                <div class="instagram-embed">
+                    <iframe src="https://www.instagram.com/reel/C8Z2k_Hup-1/embed" width="100%" height="700" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                </div>
+
+                <div class="instagram-embed">
+                    <iframe src="https://www.instagram.com/reel/C8DAzUCPw_T/embed" width="100%" height="700" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                </div>
+            </div>
+
+            <div class="instagram-cta">
+                <a href="https://www.instagram.com/estudiojuridicodefilippi/" target="_blank" class="btn btn-primary">
+                    @estudiojuridicodefilippi
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="cta">
+        <div class="cta-overlay"></div>
+        <div class="container">
+            <h2>¿Necesita Asesoramiento Legal?</h2>
+            <p>No deje sus asuntos legales para después. Contáctenos hoy y comience a resolver su situación con el respaldo de profesionales comprometidos.</p>
+            <a href="https://wa.me/5493764534422?text=Hola,%20necesito%20asesoramiento%20legal" target="_blank" class="btn btn-primary">
+                <i class="fab fa-whatsapp"></i> Consulte por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section class="contacto" id="contacto">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <p class="section-subtitle">Estamos aquí para ayudarlo. Comuníquese con nosotros.</p>
+            
+            <div class="contacto-grid">
+                <div class="contacto-info">
+                    <div class="contacto-item">
+                        <div class="contacto-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contacto-text">
+                            <h3>WhatsApp</h3>
+                            <p><a href="https://wa.me/5493764534422" target="_blank">+54 9 3764 53-4422</a></p>
+                            <p>Respuesta rápida las 24hs</p>
+                        </div>
+                    </div>
+
+                    <div class="contacto-item">
+                        <div class="contacto-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="contacto-text">
+                            <h3>Instagram</h3>
+                            <p><a href="https://www.instagram.com/estudiojuridicodefilippi/" target="_blank">@estudiojuridicodefilippi</a></p>
+                            <p>Síguenos para contenido legal</p>
+                        </div>
+                    </div>
+
+                    <div class="contacto-item">
+                        <div class="contacto-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contacto-text">
+                            <h3>Ubicación</h3>
+                            <p>Colón 1815, 4° piso, oficina 2</p>
+                            <p>Posadas, Misiones 3300</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contacto-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Enviar Consulta</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa Section -->
+    <section class="mapa">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3539.8467742894976!2d-55.89627842371524!3d-27.471036776324636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9457a2f1e2e2e2e3%3A0x1234567890abcdef!2sCol%C3%B3n%201815%2C%20Posadas%2C%20Misiones!5e0!3m2!1ses-419!2sar!4v1234567890123!5m2!1ses-419!2sar" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>DEFILIPPI</h3>
+                    <p>Estudio Jurídico y Escribanía comprometido con brindar soluciones legales efectivas y personalizadas. Atención presencial y online en Posadas, Misiones.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/estudiojuridicodefilippi/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5493764534422" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="#especialidades">Especialidades</a></li>
+                        <li><a href="#sobre-mi">Sobre Mí</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                        <li><a href="#faq">Preguntas</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-especialidades">
+                    <h4>Áreas</h4>
+                    <ul>
+                        <li>Sucesiones</li>
+                        <li>Derecho de Familia</li>
+                        <li>Derecho Inmobiliario</li>
+                        <li>Mediación</li>
+                        <li>Escribanía</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Estudio Jurídico Defilippi. Todos los derechos reservados.</p>
+                <p>Desarrollado por <a href="https://instagram.com/sageedev" target="_blank">@sageDev</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/5493764534422?text=Hola,%20necesito%20asesoramiento%20legal" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all items
+                faqItems.forEach(i => i.classList.remove('active'));
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Contact Form
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nombre = document.getElementById('nombre').value;
+            const telefono = document.getElementById('telefono').value;
+            const mensaje = document.getElementById('mensaje').value;
+            
+            const whatsappMessage = `Hola, mi nombre es ${nombre}. ${mensaje}`;
+            const whatsappURL = `https://wa.me/5493764534422?text=${encodeURIComponent(whatsappMessage)}`;
+            
+            window.open(whatsappURL, '_blank');
+            
+            // Clear form
+            contactForm.reset();
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
